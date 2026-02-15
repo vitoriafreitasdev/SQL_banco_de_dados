@@ -1,0 +1,14 @@
+tipagem_tabelas_banco_de_dados
+
+char/varchar (caracteres)
+float/int (números)
+blob(img, word...)
+text(texto extenso)
+
+varchar => é dinâmico, o tipo varia conforme o dado.                     
+Por exemplo:
+varchar(10), se entrarmos com o nome joão, vai ocupar 4 bytes(1 byte por caractere), se fosse char(10) o nome joão ocuparia 10 bytes.
+
+O char não gasta tempo variando.
+Então use o char => quando o número de caracteres da coluna nunca for variante.
+

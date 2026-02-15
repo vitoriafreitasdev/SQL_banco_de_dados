@@ -1,0 +1,53 @@
+
+/* EXERCICIOS TESTES */
+
+USE EXERCICIO;
+
+CREATE TABLE LOJA(
+	IDLOJA INT PRIMARY KEY AUTO_INCREMENT,
+	NOME VARCHAR(30) NOT NULL,
+	EMAIL VARCHAR(50) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE CLIENTES(
+	IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT,
+	NOME VARCHAR(30) NOT NULL,
+	EMAIL VARCHAR(30) NOT NULL UNIQUE,
+	ID_LOJA INT,
+	FOREIGN KEY(ID_LOJA)
+	REFERENCES LOJA(IDLOJA)
+);
+
+CREATE TABLE LOJA_TELEFONE(
+	IDLOJA_TELEFONE INT PRIMARY KEY AUTO_INCREMENT,
+	TIPO ENUM('RES', 'COM', 'CEL') NOT NULL,
+	NUMERO VARCHAR(10) NOT NULL,
+	ID_LOJA INT UNIQUE,
+	FOREIGN KEY(ID_LOJA)
+	REFERENCES LOJA(IDLOJA)
+);
+
+/* ADICIONANDO LOJAS */
+
+INSERT INTO LOJA VALUES(NULL, "Tenis PLace", "tenisplace@gmail.com");
+INSERT INTO LOJA VALUES(NULL, "Womans Clothes", "wc_comercial@gmail.com");
+INSERT INTO LOJA VALUES(NULL, "Marks Sports", "markssports@gmail.com");
+INSERT INTO LOJA VALUES(NULL, "Bags Place", "bp_contact@gmail.com");
+INSERT INTO LOJA VALUES(NULL, "Junior Clothing", "junior__clothing@gmail.com");
+
+/* ADCIONANDO LOJAS CLIENTES */
+
+INSERT INTO CLIENTES VALUES(NULL, 'Jonathan Marques', 'jm@gmail.com', 1);
+INSERT INTO CLIENTES VALUES(NULL, 'Maria Julia', 'mariajulia@gmail.com', 1);
+
+INSERT INTO CLIENTES VALUES(NULL, 'Marcel Paulo', 'mp@gmail.com', 3);
+INSERT INTO CLIENTES VALUES(NULL, 'Ana Carmel', 'ana_carmel@gmail.com', 2);
+
+INSERT INTO CLIENTES VALUES(NULL, 'Sandro Fernandes', 'sandroFernandes@gmail.com', 4);
+INSERT INTO CLIENTES VALUES(NULL, 'Giulia Lima', 'giulia_lima@gmail.com', 2);
+
+INSERT INTO CLIENTES VALUES(NULL, 'Carlos Fernan', 'carlosFernan@gmail.com', 5);
+INSERT INTO CLIENTES VALUES(NULL, 'Catarina Fernan', 'Catarina__Fernan@gmail.com', 5);
+
+/* Inserir agora os telefones das lojas*/

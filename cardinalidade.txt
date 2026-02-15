@@ -1,0 +1,21 @@
+cardinalidade
+
+- Quem define a cardinalidade é a regra de negocio 
+
+cardinalidade -> vai tratar do máximo que vai acontecer 
+
+(obrigatoriedade, cardinalidade)
+
+(0, n)
+
+(0, 1)
+
+(1, n)
+
+(1, 1)
+
+( 0 => não é obrigatório, 1 => no máximo 1)
+
+( 0, n => pode ter vários)
+
+( 1 => é obrigatório, n ou 1)
