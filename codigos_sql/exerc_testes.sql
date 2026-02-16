@@ -51,3 +51,35 @@ INSERT INTO CLIENTES VALUES(NULL, 'Carlos Fernan', 'carlosFernan@gmail.com', 5);
 INSERT INTO CLIENTES VALUES(NULL, 'Catarina Fernan', 'Catarina__Fernan@gmail.com', 5);
 
 /* Inserir agora os telefones das lojas*/
+
+INSERT INTO LOJA_TELEFONE VALUES(NULL, 'CEL', '12345674', 5);
+INSERT INTO LOJA_TELEFONE VALUES(NULL, 'RES', '43525262', 1);
+INSERT INTO LOJA_TELEFONE VALUES(NULL, 'COM', '52526432', 4);
+INSERT INTO LOJA_TELEFONE VALUES(NULL, 'CEL', '87858351', 3);
+INSERT INTO LOJA_TELEFONE VALUES(NULL, 'CEL', '32784574', 2);
+
+/* FAZENDO ATUALIZAÇÕES */
+
+/*verificando condição*/
+SELECT * FROM LOJA_TELEFONE WHERE ID_LOJA = 2;
+
+UPDATE LOJA_TELEFONE SET NUMERO = '98765432' WHERE ID_LOJA = 2;
+
+/*verificando condição*/
+SELECT * FROM CLIENTES WHERE ID_LOJA = 3 AND EMAIL = 'mp@gmail.com';
+
+UPDATE CLIENTES SET EMAIL = 'marcel_paulop@gmail.com' WHERE ID_LOJA = 3 AND EMAIL = 'mp@gmail.com';
+
+/* FAZENDO DELETES */
+
+/*verificando condição*/
+SELECT * FROM CLIENTES WHERE NOME = 'Sandro Fernandes' AND EMAIL = 'sandroFernandes@gmail.com';
+
+DELETE FROM CLIENTES WHERE NOME = 'Sandro Fernandes' AND EMAIL = 'sandroFernandes@gmail.com';
+
+/* CONTANDO CLIENTES */
+
+SELECT COUNT(*) FROM CLIENTES;
+
+SELECT * FROM CLIENTES WHERE (NOME = 'Carlos Fernan' AND EMAIL = 'carlosFernan@gmail.com') OR 
+(NOME = 'Catarina Fernan' AND EMAIL = 'Catarina__Fernan@gmail.com');
